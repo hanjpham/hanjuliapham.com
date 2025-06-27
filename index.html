@@ -15,12 +15,11 @@
             --medium-gray: #707070;
             --light-gray: #F5F5F5;
             --white: #FFFFFF;
-            --sidebar-width: 280px;
+            --max-width: 900px;
         }
         
         html {
             scroll-behavior: smooth;
-            background-color: var(--white);
         }
 
         body {
@@ -29,382 +28,387 @@
             color: var(--dark-gray);
             font-size: 16px;
             margin: 0;
-            min-height: 100vh;
-            display: flex;
             background-color: var(--light-gray);
         }
 
-        .sidebar {
-            width: var(--sidebar-width);
+        /* Header Section */
+        .header {
             background-color: var(--white);
-            position: fixed;
-            height: 100vh;
-            padding: 40px 20px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.03);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-sizing: border-box;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        .main-content {
-            margin-left: var(--sidebar-width);
-            flex: 1;
-            padding: 40px;
-            max-width: calc(100% - var(--sidebar-width));
-            background-color: var(--white);
-            min-height: 100vh;
-            box-sizing: border-box;
+        .header-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
         }
 
         .profile-photo {
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            margin: 0 auto 20px;
-            border: 3px solid var(--white);
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            margin: 0 auto 30px;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
             object-fit: cover;
+            display: block;
         }
 
-        .sidebar-info {
-            text-align: center;
-            margin-bottom: 40px;
-            width: 100%;
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0 0 10px;
+            color: var(--primary);
         }
 
-        .sidebar-info h1 {
-            font-size: 1.8em;
-            margin: 10px 0 5px;
-            color: var(--dark-gray);
-        }
-
-        .sidebar-info p {
-            margin: 5px 0;
+        .header-info {
             color: var(--medium-gray);
-            font-size: 0.9em;
-        }
-
-        nav {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        nav a {
-            color: var(--dark-gray);
-            text-decoration: none;
-            padding: 10px 20px;
-            font-size: 1em;
-            transition: all 0.3s ease;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        nav a:hover, nav a.active {
-            color: var(--white);
-            background-color: var(--primary-light);
-        }
-
-        section {
-            display: none;
-            animation: fadeIn 0.5s;
-            padding: 0 40px 30px 0;
+            font-size: 1.1em;
             margin-bottom: 30px;
         }
 
-        #home {
-            display: block;
+        .header-info p {
+            margin: 5px 0;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            padding: 0 20px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--primary-light);
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--white);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        nav a.active:after {
+            transform: scaleX(1);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            background-color: var(--white);
+            padding: 60px 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            animation: fadeIn 0.5s;
         }
 
         h2 {
             color: var(--primary);
-            border-bottom: 1px solid var(--light-gray);
-            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 15px;
             margin-top: 0;
-            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-size: 2em;
         }
 
         h3 {
             color: var(--primary);
             margin-top: 40px;
-            font-size: 1.4em;
+            margin-bottom: 25px;
+            font-size: 1.5em;
         }
 
-     .project-item {
-    margin-bottom: 35px;
-    padding: 25px;
-    background-color: var(--light-gray);
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.project-item:hover {
-    transform: translateX(5px);
-    box-shadow: 0 2px 15px rgba(0,0,0,0.03);
-}
-
-.project-content {
-    display: none;
-    margin-top: 20px;
-    animation: fadeIn 0.5s;
-}
-
-.project-item.expanded .project-content {
-    display: block;
-}
-
-.project-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.project-title h4 {
-    margin: 0;
-    color: var(--primary);
-    font-size: 1.2em;
-    line-height: 1.4;
-}
-
-.project-title:after {
-    content: '+';
-    font-size: 1.5em;
-    color: var(--medium-gray);
-    transition: transform 0.3s ease;
-}
-
-.project-item.expanded .project-title:after {
-    transform: rotate(45deg);
-}
-
-.project-item p {
-    margin: 8px 0;
-    color: var(--medium-gray);
-}
-
-.project-item .collaborators {
-    font-style: italic;
-    color: var(--medium-gray);
-    margin-top: 10px;
-}
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .skill-category {
+        /* Project Items */
+        .project-item {
+            margin-bottom: 30px;
+            padding: 25px;
             background-color: var(--light-gray);
-            padding: 20px;
             border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        .skill-category h4 {
+        .project-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .project-content {
+            display: none;
+            margin-top: 20px;
+            animation: fadeIn 0.5s;
+        }
+
+        .project-item.expanded .project-content {
+            display: block;
+        }
+
+        .project-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .project-title h4 {
+            margin: 0;
             color: var(--primary);
-            margin-top: 0;
+            font-size: 1.2em;
+            line-height: 1.4;
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .project-title:after {
+            content: '+';
+            font-size: 1.5em;
+            color: var(--medium-gray);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .project-item.expanded .project-title:after {
+            transform: rotate(45deg);
+        }
+
+        .project-item p {
+            margin: 10px 0;
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        .project-item .collaborators {
+            font-style: italic;
+            color: var(--medium-gray);
             margin-bottom: 15px;
         }
 
-        .skill-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .skill-list li {
-            margin-bottom: 8px;
-            color: var(--medium-gray);
-        }
-
+        /* Education Items */
         .education-item {
-            margin-bottom: 25px;
-            padding: 20px;
+            margin-bottom: 30px;
+            padding: 25px;
             background-color: var(--light-gray);
             border-radius: 8px;
         }
 
         .education-item h4 {
-            margin: 0 0 10px 0;
+            margin: 0 0 15px 0;
             color: var(--primary);
+            font-size: 1.3em;
         }
 
         .education-item p {
             margin: 5px 0;
-            color: var(--medium-gray);
+            color: var(--dark-gray);
         }
 
-        .project-media {
-            margin-top: 20px;
-            max-width: 100%;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .project-media img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 4px;
-        }
-
+        /* Contact Section */
         .contact-info {
-            background-color: var(--light-gray);
-            padding: 30px;
-            border-radius: 8px;
-            margin-top: 20px;
-            line-height: 1.8;
+            line-height: 2;
         }
 
-        .additional-info {
-            margin-top: 40px;
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .additional-info h3 {
+        .contact-info a:hover {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
             margin-bottom: 20px;
         }
 
-        .footer-links {
-            margin-top: auto;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding-top: 40px;
+        .social-links img {
+            width: 28px;
+            height: 28px;
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s ease;
         }
 
-        .footer-links img {
-            width: 24px;
-            height: 24px;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
+        .social-links a:hover img {
+            transform: scale(1.1);
         }
 
-        .footer-links a:hover img {
-            opacity: 1;
-        }
-
+        /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
         }
 
-        @media screen and (max-width: 1024px) {
-            .sidebar {
-                width: 220px;
-                --sidebar-width: 220px;
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
             }
 
             .profile-photo {
-                width: 140px;
-                height: 140px;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            body {
-                flex-direction: column;
-            }
-
-            .sidebar {
-                position: relative;
-                width: 100%;
-                height: auto;
-                padding: 20px;
-            }
-
-            .main-content {
-                margin-left: 0;
-                max-width: 100%;
-                padding: 20px;
+                width: 150px;
+                height: 150px;
             }
 
             nav {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
+                overflow-x: auto;
             }
 
-            .skills-grid {
-                grid-template-columns: 1fr;
+            .nav-content {
+                min-width: fit-content;
+            }
+
+            nav a {
+                padding: 15px 20px;
+                font-size: 0.9em;
+            }
+
+            section {
+                padding: 40px 25px;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            .project-title h4 {
+                font-size: 1.1em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .header {
+                padding: 40px 20px;
+            }
+
+            section {
+                padding: 30px 20px;
+                margin-bottom: 20px;
+            }
+
+            .project-item {
+                padding: 20px;
+            }
+
+            .education-item {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <aside class="sidebar">
-        <img src="prf.jpg" alt="Julia Han Pham" class="profile-photo">
-        <div class="sidebar-info">
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <img src="prf.jpg" alt="Julia Han Pham" class="profile-photo">
             <h1>Julia Han Pham</h1>
-            <p>PhD Candidate</p>
-            <p>Brooks School of Public Policy</p>
-            <p>Cornell University</p>
+            <div class="header-info">
+                <p>PhD Candidate</p>
+                <p>Brooks School of Public Policy</p>
+                <p>Cornell University</p>
+            </div>
         </div>
-        
-        <nav>
-            <a href="#" onclick="showSection('home')" id="homeNav">Home</a>
-            <a href="#" onclick="showSection('projects')" id="projectsNav">Projects</a>
-            <a href="#" onclick="showSection('education')" id="educationNav">Education</a>
-            <a href="#" onclick="showSection('contact')" id="contactNav">Contact</a>
-        </nav>
+    </header>
 
-        <div class="footer-links">
-            <a href="https://www.linkedin.com/in/juliagiahanpham/" target="_blank" aria-label="LinkedIn Profile">
-                <img src="linkedinlogo.png" alt="LinkedIn">
-            </a>
-            <a href="https://publicpolicy.cornell.edu/people/han-pham/" target="_blank" aria-label="Cornell Profile">
-                <img src="cornelllogo.png" alt="Cornell">
-            </a>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="#home" class="active">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
         </div>
-    </aside>
+    </nav>
 
+    <!-- Main Content -->
     <main class="main-content">
         <section id="home">
             <h2>Welcome</h2>
             <p>I am a PhD candidate in Public Policy at Cornell University's Brooks School of Public Policy, with research topics in Applied Microeconomics and Industrial Organization. My work integrates methods from economics and data analytics to study healthcare policy and market design. I'm working on a quantitative assessment of funding using choice models, analyzing $15B in federal funding, and developing methods to estimate salary offers in the healthcare sector. I also study applications of marketing and accreditation data, such as evaluations of smoking cessation and teaching function of major hospitals.</p>
-            
-          
         </section>
 
         <section id="projects">
             <h2>Projects</h2>
             
             <h3>Dissertation</h3>
-           <div class="project-item" onclick="toggleProject(this)">
-    <div class="project-title">
-        <h4>Funding Reform and Physician Supply: Evaluating Policy Implementation Using Choice Models</h4>
-    </div>
-    <div class="project-content">
-        <p>Using data from Centers for Medicare & Medicaid Services, American Medical Association, and Bureau of Labor Statistics, this research analyzes $15B in federal funding covering 80% of new U.S. doctors (2016-2019).</p>
-        <div class="project-media">
-             <p style="font-size: 0.9em; color: var(--medium-gray); text-align: center;">
-            </p>
-        </div>
-    </div>
-</div>
+            <div class="project-item" onclick="toggleProject(this)">
+                <div class="project-title">
+                    <h4>Funding Reform and Physician Supply: Evaluating Policy Implementation Using Choice Models</h4>
+                </div>
+                <div class="project-content">
+                    <p>Using data from Centers for Medicare & Medicaid Services, American Medical Association, and Bureau of Labor Statistics, this research analyzes $15B in federal funding covering 80% of new U.S. doctors (2016-2019).</p>
+                </div>
+            </div>
 
-            <h3>Works in Progress </h3>
-           <div class="project-item" onclick="toggleProject(this)">
-    <div class="project-title">
-        <h4>E-cigarette Use and Smoking Cessation in Consumer Data</h4>
-    </div>
-    <div class="project-content">
-        <p class="collaborators">with Alan Mathios & Don Kenkel</p>
-        <p>Analysis of ~420K consumer records (2013-2019) to study cessation patterns among current smokers. Discrete survival analysis reveals evidence that commitment to switch can improve quit success despite limited impact of standalone e-cigarette use.</p>
-    </div>
-</div>
+            <h3>Works in Progress</h3>
+            <div class="project-item" onclick="toggleProject(this)">
+                <div class="project-title">
+                    <h4>E-cigarette Use and Smoking Cessation in Consumer Data</h4>
+                </div>
+                <div class="project-content">
+                    <p class="collaborators">with Alan Mathios & Don Kenkel</p>
+                    <p>Analysis of ~420K consumer records (2013-2019) to study cessation patterns among current smokers. Discrete survival analysis reveals evidence that commitment to switch can improve quit success despite limited impact of standalone e-cigarette use.</p>
+                </div>
+            </div>
 
-<div class="project-item" onclick="toggleProject(this)">
-    <div class="project-title">
-        <h4>Teaching Function and Quality of Care</h4>
-    </div>
-    <div class="project-content">
-        <p class="collaborators">with Sean Nicholson & Colleen Carey</p>
-        <p>Investigating the components of hospital-based care team, with a focus on resident training. I use subtle disruptions and data from various sources to piece together an experiment separating the role of teaching function from other components.</p>
-    </div>
-</div>
+            <div class="project-item" onclick="toggleProject(this)">
+                <div class="project-title">
+                    <h4>Teaching Function and Quality of Care</h4>
+                </div>
+                <div class="project-content">
+                    <p class="collaborators">with Sean Nicholson & Colleen Carey</p>
+                    <p>Investigating the components of hospital-based care team, with a focus on resident training. I use subtle disruptions and data from various sources to piece together an experiment separating the role of teaching function from other components.</p>
+                </div>
+            </div>
         </section>
 
         <section id="education">
@@ -425,52 +429,92 @@
             </div>
         </section>
 
-   <section id="contact">
-    <h2>Contact</h2>
-    <p>Office: MVR Hall, Cornell University at 116 Reservoir Avenue, Ithaca NY 14850</p>
-    <p>Email: <span id="email"></span></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/juliagiahanpham/" target="_blank">Profile</a></p>
-</section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p><strong>Office:</strong> MVR Hall, Cornell University<br>
+                116 Reservoir Avenue, Ithaca NY 14850</p>
+                <p><strong>Email:</strong> <span id="email"></span></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/juliagiahanpham/" target="_blank">View Profile</a></p>
+            </div>
+        </section>
+    </main>
 
-<script>
-    document.getElementById("email").innerHTML = 
-        '<a href="mailto:' + 'hp452' + '@' + 'cornell.edu">' + 'hp452' + '@' + 'cornell.edu</a>';
-</script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/juliagiahanpham/" target="_blank" aria-label="LinkedIn Profile">
+                <img src="linkedinlogo.png" alt="LinkedIn">
+            </a>
+            <a href="https://publicpolicy.cornell.edu/people/han-pham/" target="_blank" aria-label="Cornell Profile">
+                <img src="cornelllogo.png" alt="Cornell">
+            </a>
+        </div>
+        <p>&copy; 2025 Julia Han Pham. All rights reserved.</p>
+    </footer>
 
+    <script>
+        // Email protection
+        document.getElementById("email").innerHTML = 
+            '<a href="mailto:' + 'hp452' + '@' + 'cornell.edu">' + 'hp452' + '@' + 'cornell.edu</a>';
 
-<script>
-    function showSection(sectionId) {
-        // Hide all sections
-        document.querySelectorAll("section").forEach(section => {
-            section.style.display = "none";
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('nav a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Scroll to section
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                const navHeight = document.querySelector('nav').offsetHeight;
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - navHeight - 20,
+                    behavior: 'smooth'
+                });
+            });
         });
 
-        // Show the selected section
-        document.getElementById(sectionId).style.display = "block";
-
-        // Remove active class from all nav links
-        document.querySelectorAll("nav a").forEach(link => {
-            link.classList.remove("active");
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navHeight = document.querySelector('nav').offsetHeight;
+            const scrollPosition = window.scrollY + navHeight + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    document.querySelector(`nav a[href="#${sectionId}"]`).classList.add('active');
+                }
+            });
         });
 
-        // Add active class to the clicked nav link
-        document.getElementById(sectionId + "Nav").classList.add("active");
-    }
-
-</script>
-<script>
-function toggleProject(element) {
-    // Remove expanded class from all other projects
-    document.querySelectorAll('.project-item').forEach(item => {
-        if (item !== element) {
-            item.classList.remove('expanded');
+        // Toggle project expansion
+        function toggleProject(element) {
+            // Remove expanded class from all other projects
+            document.querySelectorAll('.project-item').forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('expanded');
+                }
+            });
+            
+            // Toggle expanded class on clicked project
+            element.classList.toggle('expanded');
         }
-    });
-    
-    // Toggle expanded class on clicked project
-    element.classList.toggle('expanded');
-}
-</script>
-
+    </script>
 </body>
 </html>
