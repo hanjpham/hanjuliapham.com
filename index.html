@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Julia Han Pham - PhD Student in Public Policy at Cornell University">
+    <title>Julia Han Pham</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .profile-photo {
+                width: 200px;
+                height: 200px;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #fff;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 100px 20px 80px;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.2em;
+            font-weight: 600;
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .profile-photo {
+            width: 350px;
+            height: 350px;
+            margin: 0 auto 45px;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .subtitle {
+            font-size: 1.25em;
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        /* Main Content */
+        .intro {
+            font-size: 1.15em;
+            line-height: 1.85;
+            margin-bottom: 80px;
+            margin-top: 100px;
+        }
+
+        .intro p {
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 25px;
+            margin-top: 45px;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #444;
+            line-height: 1.85;
+        }
+
+        /* Projects */
+        .project {
+            margin-bottom: 45px;
+            padding-bottom: 45px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .project h4 {
+            font-size: 1.25em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .project .collaborators {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        .project p {
+            color: #555;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 40px;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-item h4 {
+            font-size: 1.25em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .education-item p {
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .education-item strong {
+            color: #333;
+        }
+
+        /* Contact */
+        .contact-info p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+            transition: border-color 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            border-color: #333;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 100px;
+            padding-top: 50px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: #333;
+        }
+
+        footer p {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2.4em;
+            }
+
+            .profile-photo {
+                width: 250px;
+                height: 250px;
+            }
+
+            .intro {
+                font-size: 1.05em;
+                margin-top: 60px;
+            }
+
+            .section {
+                margin-bottom: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Julia Han Pham</h1>
+            <img src="prf.jpg" alt="Julia Han Pham" class="profile-photo">
+            <p class="subtitle">PhD Candidate in Public Policy · Cornell University</p>
+        </header>
+
+        <div class="intro">
+            <p>I am a PhD candidate in Public Policy at Cornell University's Brooks School of Public Policy, with research topics in Applied Microeconomics and Industrial Organization.</p>
+            <p>I'm working on a quantitative assessment of Graduate Medical Education funding using location choice models. My other projects include applications of clinical natural language data and accreditation records in topics such as smoking cessation and patient outcome prediction.</p>
+        </div>
+
+        <div class="section">
+            <h3>Dissertation</h3>
+            <div class="project">
+                <h4>Can Rural Funding Fix Rural Shortages? A Location Choice Analysis of US Physicians</h4>
+                <p>Using data from the Centers for Medicare & Medicaid Services, the American Medical Association, and the Bureau of Labor Statistics, this research analyzes $15B in federal funding covering 80% of new U.S. doctors (2016-2019). I compare rural-focused initiatives in addressing rural shortages with practice environment components, such as Graduate Medical Education programs and positions, in influencing the choice of practice location. <a href="https://ashecon.confex.com/ashecon/2025/meetingapp.cgi/Session/6131">ASHEcon 2025 Session</a></p>
+            </div>
+
+           <h3> Selected Works in Progress</h3>
+            <div class="project">
+                <h4>Assessing New York's Healthcare Disparities Using Health Plan Quality Data</h4>
+                <p class="collaborators">with Sean Nicholson & Joseph Stankaitis</p>
+                <p>Under revision at American Journal of Managed Care.</p>
+            </div>
+            <div class="project">
+                <h4>E-cigarette Use and Smoking Cessation in Consumer Data</h4>
+                <p class="collaborators">with Alan Mathios & Don Kenkel</p>
+                <p>Analysis of ~420K consumer records (2013-2019) to study cessation patterns among current smokers. Applied logistic regression model to evaluate e-cigarette adoption and cessation patterns in large NielsenIQ consumer panels, revealing that commitment to switch can improve quit success despite limited impact of standalone e-cigarette use.</p>
+            </div>
+            <div class="project">
+                <h4>Teaching Function and Quality of Care</h4>
+                <p class="collaborators">with Sean Nicholson</p>
+                <p>Investigating the components of hospital-based care team, with a focus on resident training. Using subtle disruptions and data from various sources to piece together an experiment separating the role of teaching function from other components.</p>
+            </div>
+            <div class="project">
+                <h4>Using Provider's Note to Predict Length of Stay: Evidence from ClinicalBERT</h4>
+                <p class="collaborators">Clinical NLP Project for SYSEN 5630 by Yifan Peng</p>
+                <p>Applied natural language processing techniques to clinical data for predicting patient length of stay using rich de-identified, individual level data.</p>
+            </div>
+        </div>
+
+
+
+        <div class="section">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p>MVR Hall, Cornell University<br>
+                116 Reservoir Avenue, Ithaca NY 14850</p>
+                <p>Email: <span id="email"></span></p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/juliagiahanpham/" target="_blank">LinkedIn</a>
+                <a href="https://publicpolicy.cornell.edu/people/han-pham/" target="_blank">Cornell Profile</a>
+            </div>
+            <p>&copy; 2025 Julia Han Pham</p>
+        </footer>
+    </div>
+
+    <script>
+        // Email protection
+        document.getElementById("email").innerHTML = 
+            '<a href="mailto:' + 'hp452' + '@' + 'cornell.edu">' + 'hp452' + '@' + 'cornell.edu</a>';
+    </script>
+</body>
+</html>
