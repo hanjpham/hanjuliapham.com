@@ -8,13 +8,13 @@
     <title>Han Pham</title>
 
     <!--  Fonts  -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
         /*  Reset & core  */
         *{margin:0;padding:0;box-sizing:border-box;}
         body{
-            font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+            font-family:'Lora', Georgia, serif;
             font-size:16px; line-height:1.7; color:#333; background:#fff;
         }
 
@@ -27,7 +27,8 @@
         }
         .site-title{
             font-family:'Playfair Display',serif;
-            font-size:1.75em; font-weight:700; letter-spacing:-0.015em;
+            font-size:2.2em;                     /* larger name */
+            font-weight:700; letter-spacing:-0.015em;
         }
 
         /*  Main column  */
@@ -47,10 +48,11 @@
         /*  Universal paragraph look  */
         p{margin-bottom:20px;color:#444;line-height:1.85;text-align:justify;}
 
-        /*  Header (photo + subtitle)  */
+        /*  Header (photo)  */
         header{margin-bottom:80px;text-align:center;}
         .profile-photo{
-            width:350px;height:350px;margin:0 auto 45px;display:block;
+            width:320px;height:320px;            /* new photo size */
+            margin:0 auto 45px;display:block;
             object-fit:cover;object-position:center;
             box-shadow:0 4px 20px rgba(0,0,0,0.08);
         }
@@ -87,12 +89,12 @@
         /*  Responsive tweaks  */
         @media(max-width:768px){
             .container{padding:100px 20px 60px;}
-            .profile-photo{width:250px;height:250px;}
-            p{text-align:left;}               /* better reading on narrow screens */
+            .profile-photo{width:240px;height:240px;}   /* scale photo */
+            p{text-align:left;}
         }
         @media(max-width:480px){
-            .site-title{font-size:1.5em;}
-            .profile-photo{width:200px;height:200px;}
+            .site-title{font-size:1.8em;}               /* keep banner tidy */
+            .profile-photo{width:190px;height:190px;}
         }
     </style>
 </head>
