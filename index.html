@@ -18,161 +18,85 @@
       --pill:#f7f7f7; --pill-border:#e9e9e9; --pill-hover:#efefef;
       --accent:#111;
     }
-
     *{margin:0;padding:0;box-sizing:border-box;}
     html { scroll-behavior: smooth; }
     body{
       font-family: var(--sans);
-      font-size:15px;
-      line-height:1.7;
-      color:var(--text);
-      background:var(--bg);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-weight:400;
-      letter-spacing:-0.01em;
+      font-size:15px; line-height:1.7; color:var(--text); background:var(--bg);
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+      font-weight:400; letter-spacing:-0.01em;
     }
-
     .banner{
-      width:100%;
-      height:64px;
-      position:fixed;
-      top:0; left:0;
-      z-index:1000;
-      background:#fff;
-      border-bottom:1px solid var(--line);
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      width:100%; height:64px; position:fixed; top:0; left:0; z-index:1000;
+      background:#fff; border-bottom:1px solid var(--line);
+      display:flex; align-items:center; justify-content:center;
     }
-    .site-title{
-      font-size:1.4em;
-      font-weight:600;
-      letter-spacing:-0.02em;
-      color:var(--ink);
-    }
-
-    .container{
-      max-width:720px;
-      margin:0 auto;
-      padding:100px 20px 60px;
-    }
-
-    h1,h2,h3,h4{
-      color:var(--ink);
-      line-height:1.3;
-      margin-top:0;
-      font-weight:600;
-      letter-spacing:-0.02em;
-    }
+    .site-title{ font-size:1.4em; font-weight:600; letter-spacing:-0.02em; color:var(--ink); }
+    .container{ max-width:720px; margin:0 auto; padding:100px 20px 60px; }
+    h1,h2,h3,h4{ color:var(--ink); line-height:1.3; margin-top:0; font-weight:600; letter-spacing:-0.02em; }
     h2{ font-size:1.4em; margin-bottom:16px;}
     h3{ font-size:1.2em; margin:40px 0 16px; color:#222;}
     h4{ font-size:1em; margin-bottom:6px; font-weight:500; letter-spacing:-0.01em;}
-
     p{ margin-bottom:14px; color:var(--text); line-height:1.7; text-align:left; font-weight:400; }
     strong{ font-weight:500; color:#333; }
-
     header{ margin-bottom:18px; text-align:center; }
     .profile-photo{
-      width:180px; height:180px; margin:0 auto 16px; display:block;
+      width:180px; height:180px; margin:0 auto 12px; display:block;
       object-fit:cover; object-position:center; border-radius:50%;
       border:1px solid var(--line);
     }
-
-    /* Subnav under photo */
+    .subnav-wrap{
+      position:sticky; top:70px;
+      z-index:999; background:rgba(255,255,255,.85); backdrop-filter: saturate(180%) blur(8px);
+      border-bottom:1px solid var(--line);
+    }
     .subnav{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      justify-content:center;
-      margin:8px auto 28px;
-      padding:0 6px;
+      display:flex; flex-wrap:nowrap; gap:8px; justify-content:center;
+      margin:0 auto; padding:10px 6px; max-width:720px;
     }
     .subnav a{
-      display:inline-block;
-      text-decoration:none;
-      color:#333;
-      background:var(--pill);
-      border:1px solid var(--pill-border);
-      border-radius:999px;
-      padding:8px 12px;
-      font-size:0.92em;
+      text-decoration:none; color:#333; background:var(--pill);
+      border:1px solid var(--pill-border); border-radius:999px;
+      padding:8px 12px; font-size:0.92em;
       transition:background .15s, color .15s, border-color .15s, box-shadow .15s;
+      white-space:nowrap;
     }
     .subnav a:hover{ background:var(--pill-hover); color:var(--ink); }
-    .subnav a.active{
-      border-color:var(--ink);
-      box-shadow:0 0 0 2px rgba(0,0,0,.02) inset;
-    }
-
+    .subnav a.active{ border-color:var(--ink); box-shadow:0 0 0 2px rgba(0,0,0,.02) inset; }
     .intro{ margin-bottom:45px; }
     .intro p{ font-size:1em; line-height:1.75; color:#444; }
-
-    a{
-      color:#4a5568;
-      text-decoration:underline;
-      text-decoration-color:#d0d0d0;
-      text-underline-offset:2px;
-      transition:color .15s, text-decoration-color .15s;
-    }
+    a{ color:#4a5568; text-decoration:underline; text-decoration-color:#d0d0d0; text-underline-offset:2px; transition:color .15s, text-decoration-color .15s; }
     a:hover{ color:var(--ink); text-decoration-color:var(--ink); }
-
-    /* Sections + anchor offset for fixed header */
-    .section{ margin-bottom:45px; padding-top:20px; scroll-margin-top:90px; }
+    .section{ margin-bottom:45px; padding-top:20px; scroll-margin-top:120px; }
     .section:first-of-type{ padding-top:0; }
-
     .project{ margin-bottom:24px; }
     .project:last-child{ margin-bottom:0; }
     .project .collaborators{ color:#777; margin-bottom:6px; font-size:0.95em; }
-    .project .status{
-      font-size:0.8em; color:#888; font-weight:500; margin-top:4px;
-      text-transform:uppercase; letter-spacing:0.05em;
-    }
-
+    .project .status{ font-size:0.8em; color:#888; font-weight:500; margin-top:4px; text-transform:uppercase; letter-spacing:0.05em; }
     .education-item, .teaching-item, .experience-item{ margin-bottom:20px; }
     .education-item:last-child, .teaching-item:last-child, .experience-item:last-child{ margin-bottom:0; }
-    .education-item h4, .teaching-item h4, .experience-item h4{ color:#333; margin-bottom:3px; }
-    .education-item p, .teaching-item p, .experience-item p{ margin-bottom:3px; }
-
-    .reference-item{
-      margin-bottom:20px; padding:14px 16px; background:#fafafa; border-radius:4px;
-    }
+    .reference-item{ margin-bottom:20px; padding:14px 16px; background:#fafafa; border-radius:4px; }
     .reference-item:last-child{ margin-bottom:0; }
     .reference-item h4{ font-size:0.95em; margin-bottom:4px; color:#333; }
     .reference-item p{ margin-bottom:3px; line-height:1.6; font-size:0.95em; }
-
-    .contact-info p{ color:#555; font-size:1em; line-height:1.7; }
-
-    footer{
-      margin-top:60px; padding-top:30px;
-      border-top:1px solid var(--line); text-align:center;
-    }
-    .social-links{
-      display:flex; justify-content:center; gap:24px; margin-bottom:20px;
-    }
-    .social-links a{
-      color:#888; text-decoration:none; font-weight:400; font-size:0.9em; transition:color .15s;
-    }
+    footer{ margin-top:60px; padding-top:30px; border-top:1px solid var(--line); text-align:center; }
+    .social-links{ display:flex; justify-content:center; gap:24px; margin-bottom:20px; }
+    .social-links a{ color:#888; text-decoration:none; font-weight:400; font-size:0.9em; transition:color .15s; }
     .social-links a:hover{ color:#333; }
     footer p{ color:#aaa; font-size:0.85em; font-weight:400; }
-
     .course-list{ list-style:none; padding-left:0; margin:6px 0 0; }
     .course-list li{ margin:6px 0; line-height:1.6; }
-
-    /* Accessibility: skip link */
-    .skip-link{
-      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
-    }
+    .skip-link{ position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
     .skip-link:focus{
       position:fixed; left:16px; top:72px; width:auto; height:auto; padding:8px 12px;
       background:#000; color:#fff; border-radius:8px; z-index:1001; outline:none;
     }
-
     @media(max-width:768px){
       .container{ padding:85px 20px 50px; }
       .profile-photo{ width:150px; height:150px; }
       h2{ font-size:1.3em; }
       h3{ font-size:1.15em; }
+      .subnav{ padding:8px 6px; overflow-x:auto; -webkit-overflow-scrolling: touch; }
     }
     @media(max-width:480px){
       .site-title{ font-size:1.3em; }
@@ -190,23 +114,17 @@
   </div>
 
   <div class="container">
-
     <header>
       <img src="prf.jpg" alt="Portrait of Han Pham" class="profile-photo">
+    </header>
 
-      <!-- Section menu (anchors) -->
+    <div class="subnav-wrap">
       <nav class="subnav" aria-label="Section menu">
         <a href="#about">About</a>
-        <a href="#education">Education</a>
         <a href="#research">Research</a>
         <a href="#teaching">Teaching</a>
-        <a href="#experience">Experience</a>
-        <a href="#presentations">Presentations</a>
-        <a href="#service">Service</a>
-        <a href="#references">References</a>
-        <a href="#contact">Contact</a>
       </nav>
-    </header>
+    </div>
 
     <section id="about" class="intro section" aria-labelledby="about-heading">
       <h2 id="about-heading" class="sr-only" style="position:absolute;left:-9999px;">About</h2>
@@ -217,14 +135,12 @@
 
     <section id="education" class="section" aria-labelledby="edu-heading">
       <h3 id="edu-heading">Education</h3>
-
       <div class="education-item">
         <h4>PhD in Public Policy (Expected 2026)</h4>
         <p><strong>Cornell University, Brooks School of Public Policy</strong><br>
         Ithaca, NY<br>
         Committee: Sean Nicholson (Chair), Colleen Carey, Alan Mathios</p>
       </div>
-
       <div class="education-item">
         <h4>BA in Mathematical Economics (2020)</h4>
         <p><strong>Temple University</strong><br>
@@ -234,28 +150,23 @@
 
     <section id="research" class="section" aria-labelledby="research-heading">
       <h3 id="research-heading">Research</h3>
-
       <div class="project">
         <h4>Can Rural Funding Fix Rural Shortages? A Location Choice Analysis of US Physicians (Job Market Paper)</h4>
         <p>I study the role of personal ties and Graduate Medical Education in the choice of physicians using a discrete choice model. I use the estimates to discuss policy on health workforce and shortages in the US supply of medical care. <a href="https://ashecon.confex.com/ashecon/2025/meetingapp.cgi/Session/6131" target="_blank" rel="noopener">ASHEcon 2025 Session</a></p>
       </div>
-
       <div class="project">
         <h4>Assessing New York's Healthcare Disparities Using Health Plan Quality Data</h4>
         <p class="collaborators">with Sean Nicholson, Samyukta Singh, and Joseph Stankaitis</p>
         <p class="status">Accepted at American Journal of Managed Care (AJMC)</p>
       </div>
-
       <div class="project">
         <h4>E-cigarette Use and Smoking Cessation in Consumer Data</h4>
         <p class="collaborators">with <a href="https://economics.cornell.edu/alan-mathios" target="_blank" rel="noopener">Alan Mathios</a></p>
       </div>
-
       <div class="project">
         <h4>Teaching Function and Quality of Care</h4>
         <p>Although teaching sites and CMS hospitals are recorded extensively, I couldn't find a dataset linking teaching activities and hospitals, so I created a dataset (accessible here) that maps all major hospitals with teaching sites from publicly available sources (HCRIS and ACGME). I use this dataset to study teaching function and outcomes.</p>
       </div>
-
       <div class="project">
         <h4>Using Provider's Note to Predict Length of Stay: Evidence from ClinicalBERT</h4>
         <p class="collaborators">Clinical NLP Project</p>
@@ -279,23 +190,19 @@
 
     <section id="experience" class="section" aria-labelledby="exp-heading">
       <h3 id="exp-heading">Research & Professional Experience</h3>
-
       <div class="experience-item">
         <h4>Graduate Research Assistant</h4>
         <p><strong>Cornell University</strong> (2020-2025)</p>
         <p>with Sean Nicholson, Don Kenkel, and Alan Mathios</p>
       </div>
-
       <div class="experience-item">
         <h4>Undergraduate Research Assistant</h4>
         <p><strong>George Mason University</strong> (2018-2020)</p>
         <p>with Catherine Maclean</p>
       </div>
-
       <div class="experience-item">
         <h4>Summer Intern</h4>
-        <p><strong>Asian Commercial Bank</strong><br>
-        Risk Department</p>
+        <p><strong>Asian Commercial Bank</strong><br>Risk Department</p>
       </div>
     </section>
 
@@ -318,7 +225,6 @@
 
     <section id="references" class="section" aria-labelledby="ref-heading">
       <h3 id="ref-heading">References</h3>
-
       <div class="reference-item">
         <h4>Sean Nicholson (Committee Chair)</h4>
         <p><strong>Professor of Policy Analysis and Management</strong><br>
@@ -326,83 +232,4 @@
         Cornell University<br>
         Email: <a href="mailto:sn243@cornell.edu">sn243@cornell.edu</a></p>
       </div>
-
-      <div class="reference-item">
-        <h4>Colleen Carey</h4>
-        <p><strong>Associate Professor of Policy Analysis and Management</strong><br>
-        Brooks School of Public Policy<br>
-        Cornell University<br>
-        Email: <a href="mailto:cmc438@cornell.edu">cmc438@cornell.edu</a></p>
-      </div>
-
-      <div class="reference-item">
-        <h4>Alan Mathios</h4>
-        <p><strong>Professor</strong><br>
-        Brooks School of Public Policy<br>
-        Cornell University<br>
-        Email: <a href="mailto:adm5@cornell.edu">adm5@cornell.edu</a></p>
-      </div>
-    </section>
-
-    <section id="contact" class="section" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact</h2>
-      <div class="contact-info">
-        <p>MVR Hall, Cornell University<br>
-        116 Reservoir Avenue, Ithaca NY 14850</p>
-        <p>Email: <span id="email"></span><br>
-        Personal: <a href="mailto:juliahanpham@gmail.com">juliahanpham@gmail.com</a><br>
-        Phone: 267-516-7326</p>
-      </div>
-    </section>
-
-    <footer>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/juliagiahanpham/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://publicpolicy.cornell.edu/people/han-pham/" target="_blank" rel="noopener">Cornell Profile</a>
-      </div>
-      <p>&copy; 2025 Han Pham</p>
-    </footer>
-  </div>
-
-  <script>
-    // Email obfuscation
-    document.getElementById("email").innerHTML =
-      '<a href="mailto:' + 'hp452' + '@' + 'cornell.edu">' + 'hp452' + '@' + 'cornell.edu</a>';
-
-    // Smooth scrolling enhancement (for browsers without native smooth)
-    document.querySelectorAll('.subnav a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if (!el) return;
-        e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        history.replaceState(null, '', '#' + id);
-      });
-    });
-
-    // Active link highlighting with IntersectionObserver
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = Array.from(document.querySelectorAll('.subnav a'));
-
-    const byId = id => navLinks.find(a => a.getAttribute('href') === '#' + id);
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const link = byId(entry.target.id);
-        if (!link) return;
-        if (entry.isIntersecting) {
-          navLinks.forEach(a => a.classList.remove('active'));
-          link.classList.add('active');
-        }
-      });
-    }, {
-      root: null,
-      rootMargin: '0px 0px -60% 0px', // triggers when top third enters
-      threshold: 0.1
-    });
-
-    sections.forEach(sec => observer.observe(sec));
-  </script>
-</body>
-</html>
+      <div class="r
