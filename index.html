@@ -17,9 +17,9 @@
       --ink:#111; --text:#555; --muted:#888; --line:#f0f0f0; --bg:#fff;
       --pill:#f7f7f7; --pill-border:#e9e9e9; --pill-hover:#efefef;
 
-      --banner-h: 76px;       /* header height to accommodate larger name */
-      --subnav-gap: 6px;      /* small gap between banner and subnav */
-      --subnav-h: 48px;       /* approximate subnav height */
+      --banner-h: 76px;
+      --subnav-gap: 6px;
+      --subnav-h: 48px;
       --container-pt: calc(var(--banner-h) + 36px);
 
       --gap-sm: 12px;
@@ -60,9 +60,10 @@
 
     header{ margin-bottom:var(--gap-md); text-align:center; }
     .profile-photo{
-      width:180px; height:180px; margin:0 auto var(--gap-sm); display:block;
-      object-fit:cover; object-position:center; border-radius:50%;
+      width:200px; height:250px; margin:0 auto var(--gap-sm); display:block;
+      object-fit:cover; object-position:center;
       border:1px solid var(--line);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
     }
 
     .subnav-wrap{
@@ -87,7 +88,6 @@
     a{ color:#4a5568; text-decoration:underline; text-decoration-color:#d0d0d0; text-underline-offset:2px; transition:color .15s, text-decoration-color .15s; }
     a:hover{ color:#111; text-decoration-color:#111; }
 
-    /* Section rhythm & separators */
     .section{
       scroll-margin-top: var(--anchor-offset);
       margin-bottom: var(--gap-xl);
@@ -138,7 +138,7 @@
       }
       .site-title{ font-size:2.2rem; }
       .container{ padding:var(--container-pt) 20px 64px; }
-      .profile-photo{ width:150px; height:150px; }
+      .profile-photo{ width:200px; height:200px; }
       h2{ font-size:1.28em; }
       h3{ font-size:1.12em; }
       .subnav{ padding:8px 6px; overflow-x:auto; -webkit-overflow-scrolling: touch; }
@@ -146,7 +146,7 @@
 
     @media(max-width:480px){
       .site-title{ font-size:1.8rem; }
-      .profile-photo{ width:120px; height:120px; }
+      .profile-photo{ width:140px; height:175px; }
       .social-links{ gap:16px; }
     }
   </style>
@@ -177,7 +177,7 @@
       <p>I am a PhD candidate in Public Policy at <a href="https://publicpolicy.cornell.edu/">Cornell University's Brooks School of Public Policy</a>, with research topics in policy analysis and health economics.</p>
       <p>My job market paper, "Can Rural Funding Fix Rural Shortages? A Location Choice Analysis of US Physicians", studies physician location decisions and discusses health workforce policies. I assemble physician lifetime location data and combine this dataset with modeling to estimate the role of personal ties and Graduate Medical Education in physician geographic distribution. My paper is available here.</p>
       <p>My other papers study the use of electronic cigarettes in smoking cessation using purchase records, and the teaching function of hospitals using accreditation data. My most recent side project is using de-identified physician notes to guess patient length of stay, motivated by my interest in natural language processing and data collection.</p>
-      <p>In my free time, I like to listen to thriller audiobooks, go to group fitness classes, try new restaurants, or spend time with my family. </p>
+      <p>In my free time, I like to listen to thriller audiobooks, go to group fitness classes, try new restaurants, and spend time with my family. </p>
     </section>
 
     <section id="education" class="section" aria-labelledby="edu-heading">
