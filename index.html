@@ -95,15 +95,15 @@
     /* Home Page Specific */
     .home-hero {
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 320px 1fr;
       gap: 56px;
       align-items: start;
       margin-bottom: 64px;
     }
 
     .profile-photo {
-      width: 280px;
-      height: 280px;
+      width: 320px;
+      height: 320px;
       object-fit: cover;
       object-position: center;
       border: 1px solid #e5e5e5;
@@ -253,6 +253,34 @@
       padding-bottom: 0;
     }
 
+    .project.jmp {
+      background: #fafbfc;
+      border: 1px solid #e8eaed;
+      border-radius: 6px;
+      padding: 32px;
+      margin-bottom: 56px;
+      border-bottom: 1px solid #e8eaed;
+    }
+
+    .project.jmp h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .project h3 {
+      margin-top: 0;
+    }
+
+    .project h3 .status {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #666;
+      letter-spacing: 0;
+      font-style: italic;
+    }
+
     .project .collaborators {
       color: #666;
       margin-bottom: 12px;
@@ -264,6 +292,11 @@
     .project p {
       line-height: 1.75;
       font-size: 1rem;
+    }
+
+    .project p em {
+      color: #555;
+      font-style: italic;
     }
 
     /* Teaching Page */
@@ -342,8 +375,8 @@
       }
 
       .profile-photo {
-        width: 220px;
-        height: 220px;
+        width: 240px;
+        height: 240px;
         margin: 0 auto;
         display: block;
       }
@@ -397,9 +430,9 @@
         </div>
       </div>
 
-      <h2>Additional Information:</h2>
+      <h2>About Me</h2>
       <p>My most recent side project is using de-identified physician notes to guess patient length of stay, motivated by my interest in natural language processing and data collection.</p>
-       <p>In my free time, I like to listen to thriller audiobooks, try new restaurants, and spend time with my family. I do not require sponsorship to work (US Permanent Resident).</p>
+      <p>In my free time, I like to listen to thriller audiobooks, go to group fitness classes, try new restaurants, and spend time with my family.</p>
     </div>
 
     <!-- RESEARCH PAGE -->
@@ -413,27 +446,24 @@
         <p><a href="https://ashecon.confex.com/ashecon/2025/meetingapp.cgi/Paper/16199" target="_blank" rel="noopener">ASHEcon 2025 Session</a></p>
       </div>
 
-      <h2>Working Papers</h2>
+      <h2>Selected Projects</h2>
       <div class="project">
-        <h3>E-cigarette Use and Smoking Cessation in Consumer Data</h3>
+        <h3>E-cigarette Use and Smoking Cessation in Consumer Data <span class="status">(In Progress)</span></h3>
         <p class="collaborators">with <a href="https://economics.cornell.edu/alan-mathios" target="_blank" rel="noopener">Alan Mathios</a></p>
       </div>
 
       <div class="project">
-        <h3>Teaching Function and Quality of Care</h3>
+        <h3>Teaching Function and Quality of Care <span class="status">(In Progress)</span></h3>
         <p>I created a dataset that maps all major hospitals with teaching sites using publicly available sources (HCRIS and ACGME). I use this dataset to study teaching function and outcomes.</p>
       </div>
 
       <div class="project">
-        <h3>Assessing New York's Healthcare Disparities Using Health Plan Quality Data</h3>
+        <h3>Assessing New York's Healthcare Disparities Using Health Plan Quality Data <span class="status">(Forthcoming, AJMC)</span></h3>
         <p class="collaborators">with <a href="https://publicpolicy.cornell.edu/people/sean-nicholson/" target="_blank" rel="noopener">Sean Nicholson</a> and Joseph Stankaitis</p>
-        <p><em>Forthcoming at American Journal of Managed Care (AJMC)</em></p>
       </div>
 
-      <h2>Work in Progress</h2>
       <div class="project">
-        <h3>Using Physician Notes to Predict Length of Stay: Evidence from ClinicalBERT</h3>
-        <p class="collaborators">Clinical NLP Course Project</p>
+        <h3>Using Physician Notes to Predict Length of Stay: Evidence from ClinicalBERT <span class="status">(Course Project)</span></h3>
       </div>
     </div>
 
@@ -497,6 +527,7 @@
       <h2>Service & Activities</h2>
       <div class="experience-item">
         <p>• Research Seminar Coordinator for Graduate Students in Public Policy</p>
+        <p>• ASHEcon Paper Reviewer</p>
         <p>• Chair of Education at Temple x UNICEF</p>
         <p>• Buffalo Garden Walks (Volunteer)</p>
       </div>
@@ -519,6 +550,13 @@
         <p>Brooks School of Public Policy<br>
         Cornell University<br>
         Email: <a href="mailto:adm5@cornell.edu">adm5@cornell.edu</a></p>
+      </div>
+      <div class="reference-item">
+        <h4>John Cawley</h4>
+        <p>Daniel Patrick Moynihan Chair in Public Policy<br>
+        Maxwell School of Citizenship and Public Affairs<br>
+        Syracuse University<br>
+        Email: <a href="mailto:jhcawley@syr.edu">jhcawley@syr.edu</a></p>
       </div>
     </div>
 
