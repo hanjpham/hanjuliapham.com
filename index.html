@@ -24,14 +24,14 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: var(--sans);
-      font-size: 15px;
-      line-height: 1.75;
+      font-size: 16px;
+      line-height: 1.7;
       color: var(--text);
       background: var(--bg);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-weight: 400;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.011em;
     }
 
     /* Header Navigation */
@@ -57,9 +57,9 @@
     }
 
     .site-name {
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       font-weight: 600;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
       color: var(--ink);
       text-decoration: none;
     }
@@ -75,9 +75,10 @@
       text-decoration: none;
       color: var(--text);
       font-weight: 500;
-      font-size: 0.95em;
+      font-size: 0.94rem;
       transition: color 0.15s;
       padding: 8px 0;
+      letter-spacing: -0.01em;
     }
 
     nav a:hover, nav a.active {
@@ -94,15 +95,15 @@
     /* Home Page Specific */
     .home-hero {
       display: grid;
-      grid-template-columns: 260px 1fr;
+      grid-template-columns: 280px 1fr;
       gap: 56px;
       align-items: start;
       margin-bottom: 64px;
     }
 
     .profile-photo {
-      width: 260px;
-      height: 325px;
+      width: 280px;
+      height: 280px;
       object-fit: cover;
       object-position: center;
       border: 1px solid #e5e5e5;
@@ -111,53 +112,71 @@
     }
 
     .home-content h1 {
-      font-size: 2.75rem;
+      font-size: 2.85rem;
       font-weight: 600;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.035em;
       color: var(--ink);
-      margin-bottom: 16px;
-      line-height: 1.1;
+      margin-bottom: 18px;
+      line-height: 1.05;
     }
 
     .home-content .subtitle {
-      font-size: 1.15rem;
-      color: #444;
-      margin-bottom: 28px;
-      line-height: 1.65;
+      font-size: 1.125rem;
+      color: #3d3d3d;
+      margin-bottom: 30px;
+      line-height: 1.6;
       font-weight: 400;
+      letter-spacing: -0.01em;
     }
 
     .home-content p {
       margin-bottom: 18px;
       color: var(--text);
-      line-height: 1.8;
+      line-height: 1.75;
+      font-size: 1rem;
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-weight: 600;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.028em;
       color: var(--ink);
-      margin: 48px 0 24px;
+      margin: 64px 0 30px;
+      line-height: 1.15;
+    }
+
+    h2:first-child {
+      margin-top: 0;
     }
 
     h3 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 600;
-      color: #222;
-      margin: 32px 0 16px;
+      color: var(--ink);
+      margin: 40px 0 20px;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
     }
 
     h4 {
-      font-size: 1em;
+      font-size: 1.05rem;
       font-weight: 600;
       color: var(--ink);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      letter-spacing: -0.015em;
+      line-height: 1.35;
     }
 
     p {
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       color: var(--text);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    strong {
+      font-weight: 600;
+      color: #2d2d2d;
     }
 
     a {
@@ -175,14 +194,23 @@
 
     .contact-info {
       background: #fafafa;
-      border: 1px solid #f3f3f3;
-      border-radius: 8px;
-      padding: 24px;
+      border: 1px solid #ececec;
+      border-radius: 6px;
+      padding: 32px;
       margin: 32px 0;
+    }
+
+    .contact-info h3 {
+      margin-top: 0;
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+      letter-spacing: -0.018em;
     }
 
     .contact-info p {
       margin-bottom: 8px;
+      line-height: 1.7;
+      font-size: 1rem;
     }
 
     .social-links {
@@ -195,8 +223,9 @@
       color: #888;
       text-decoration: none;
       font-weight: 500;
-      font-size: 0.95em;
+      font-size: 0.94rem;
       transition: color 0.15s;
+      letter-spacing: -0.008em;
     }
 
     .social-links a:hover {
@@ -204,29 +233,37 @@
     }
 
     footer {
-      margin-top: 64px;
-      padding-top: 32px;
+      margin-top: 80px;
+      padding-top: 40px;
       border-top: 1px solid var(--line);
       text-align: center;
       color: #aaa;
-      font-size: 0.85em;
+      font-size: 0.875rem;
     }
 
     /* Research Page */
     .project {
-      margin-bottom: 32px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid #f5f5f5;
+      margin-bottom: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #f0f0f0;
     }
 
     .project:last-child {
       border-bottom: none;
+      padding-bottom: 0;
     }
 
     .project .collaborators {
-      color: #777;
-      margin-bottom: 8px;
-      font-size: 0.95em;
+      color: #666;
+      margin-bottom: 12px;
+      font-size: 0.96rem;
+      font-style: italic;
+      letter-spacing: -0.005em;
+    }
+
+    .project p {
+      line-height: 1.75;
+      font-size: 1rem;
     }
 
     /* Teaching Page */
@@ -236,34 +273,49 @@
     }
 
     .course-list li {
-      margin: 16px 0;
-      line-height: 1.6;
+      margin: 18px 0;
+      line-height: 1.7;
+      font-size: 1rem;
     }
 
     /* Reference Items */
     .reference-item {
-      margin-bottom: 24px;
-      padding: 20px;
+      margin-bottom: 28px;
+      padding: 24px;
       background: #fafafa;
-      border-radius: 8px;
-      border: 1px solid #f3f3f3;
+      border-radius: 6px;
+      border: 1px solid #ececec;
+    }
+
+    .reference-item:last-child {
+      margin-bottom: 0;
     }
 
     .reference-item h4 {
-      font-size: 1em;
-      margin-bottom: 8px;
-      color: #333;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      color: var(--ink);
+      letter-spacing: -0.015em;
     }
 
     .reference-item p {
-      margin-bottom: 4px;
-      line-height: 1.6;
-      font-size: 0.95em;
+      margin-bottom: 6px;
+      line-height: 1.7;
+      font-size: 0.96rem;
+      color: var(--text);
     }
 
     /* Experience Items */
     .experience-item, .education-item {
-      margin-bottom: 32px;
+      margin-bottom: 40px;
+    }
+
+    .experience-item:last-child, .education-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .experience-item p, .education-item p {
+      line-height: 1.75;
     }
 
     /* Responsive */
@@ -290,8 +342,8 @@
       }
 
       .profile-photo {
-        width: 200px;
-        height: 250px;
+        width: 220px;
+        height: 220px;
         margin: 0 auto;
         display: block;
       }
@@ -345,22 +397,23 @@
         </div>
       </div>
 
-      <h2>About Me</h2>
+      <h2>Additional Information:</h2>
       <p>My most recent side project is using de-identified physician notes to guess patient length of stay, motivated by my interest in natural language processing and data collection.</p>
-      <p>In my free time, I like to listen to thriller audiobooks, go to group fitness classes, try new restaurants, and spend time with my family.</p>
+       <p>In my free time, I like to listen to thriller audiobooks, try new restaurants, and spend time with my family. I do not require sponsorship to work (US Permanent Resident).</p>
     </div>
 
     <!-- RESEARCH PAGE -->
     <div id="research-page" class="page" style="display: none;">
       <h1>Research</h1>
       
-      <div class="project">
-        <h4>Job Market Paper:</h4>
+      <h2>Job Market Paper</h2>
+      <div class="project jmp">
         <h3>Can Funding Fix Rural Physician Shortages? Evidence from a Location Choice Model</h3>
         <p><strong>Abstract:</strong> Physician geographic density affects access to care, especially in rural areas. This paper examines the location choice of early career physicians which includes standard demographics, practice environment proxies via Graduate Medical Education (GME) programs, and personal ties to the location. Using these demand parameters, I study the impacts of workforce policies by estimating the changes to rural probability when relevant attributes are varied in counterfactual analysis. I find that previous ties are major drivers of practice location: physicians have 49 times higher odds of choosing the location they did their residency in, but effects are halved in rural areas. Higher local hourly wages have little to no effects. Rural residency training exposure works through fostering previous ties to the location, underscoring the importance of local attributes in policy investments, and the potential of initiatives besides traditional approaches.</p>
         <p><a href="https://ashecon.confex.com/ashecon/2025/meetingapp.cgi/Paper/16199" target="_blank" rel="noopener">ASHEcon 2025 Session</a></p>
       </div>
 
+      <h2>Working Papers</h2>
       <div class="project">
         <h3>E-cigarette Use and Smoking Cessation in Consumer Data</h3>
         <p class="collaborators">with <a href="https://economics.cornell.edu/alan-mathios" target="_blank" rel="noopener">Alan Mathios</a></p>
@@ -374,9 +427,10 @@
       <div class="project">
         <h3>Assessing New York's Healthcare Disparities Using Health Plan Quality Data</h3>
         <p class="collaborators">with <a href="https://publicpolicy.cornell.edu/people/sean-nicholson/" target="_blank" rel="noopener">Sean Nicholson</a> and Joseph Stankaitis</p>
-        <p>Forthcoming at American Journal of Managed Care (AJMC)</p>
+        <p><em>Forthcoming at American Journal of Managed Care (AJMC)</em></p>
       </div>
 
+      <h2>Work in Progress</h2>
       <div class="project">
         <h3>Using Physician Notes to Predict Length of Stay: Evidence from ClinicalBERT</h3>
         <p class="collaborators">Clinical NLP Course Project</p>
